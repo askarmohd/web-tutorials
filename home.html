@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      min-width: 400px;
+    }
+
+    /* Style the top navigation bar */
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+      width: 100%;
+    }
+
+    /* Style the topnav links */
+
+    .topnav a {
+      float: right;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 25px 16px;
+      text-decoration: none;
+    }
+
+    /* Change color on hover */
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Style the content */
+
+    .content {
+      background-color: lightblue;
+      background-image: url("slider1.jpg");
+      padding: 10px;
+      height: 400px;
+    }
+
+    @media screen and (max-width: 950px) and (min-width: 100px) {
+      .content {
+        background-color: lightgreen;
+        height: 800px;
+      }
+    }
+    @media screen and (max-width: 1350px) and (min-width: 950px) {
+      .content {
+        height: 560px;
+      }
+    }
+
+    body {
+      background-color: #222;
+    }
+
+    .carousel {
+      position: relative;
+      width: 700px;
+      border: 10px solid white;
+      margin: 20px auto;
+      box-shadow: 20px 20px 40px #000;
+    }
+
+    .carousel>img {
+      display: none;
+      width: 100%;
+    }
+
+    .carousel>input {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .carousel>input:checked+label+img {
+      display: block;
+    }
+
+    .carousel>label,
+    .carousel>input:checked~label~label~label~label {
+      display: none;
+    }
+
+    .carousel>input:checked+label {
+      display: block;
+      left: 0;
+    }
+
+    .carousel>input:checked~label~label~label {
+      display: block;
+      right: 0;
+    }
+
+    .carousel>label {
+      position: absolute;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      visibility: hidden;
+    }
+
+    .carousel>label:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      visibility: visible;
+    }
+
+    .carousel>label:after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 25px;
+      height: 25px;
+      line-height: 22px;
+      margin: -15px 10px 0 10px;
+      background-color: black;
+      color: white;
+      font-family: 'Arial';
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      visibility: hidden;
+      border: 2px solid white;
+      border-radius: 20px;
+      box-shadow: 0 3px 4px black;
+    }
+
+    .carousel>label:hover:after {
+      visibility: visible;
+    }
+
+    .carousel>input:checked+label:after {
+      left: 0;
+      content: '\00AB';
+    }
+
+    .carousel>input:checked~label~label~label:after {
+      right: 0;
+      content: '\00BB';
+    }
+
+    .search {
+      float: right;
+      margin-left: 0px;
+      margin-right: 20px;
+      margin-top: 14px;
+      width: 130px;
+      height: 20px;
+
+    }
+
+    .btn {
+      float: right;
+      background-color: lightgreen;
+      width: 120px;
+      height: 50px;
+      padding: -10px;
+      margin-top: 20px;
+      margin-right: 600px;
+    }
+
+    .btn:hover {
+      background-color: brown;
+    }
+
+    /*Course container*/
+
+    .coursecontainer {
+      height: 200px;
+      width: 400px;
+      background: #e431e4c4;
+      float: left;
+      clear: right;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .coursecontainer p {
+      position: absolute;
+      text-align: right;
+      width: 340px;
+      height: 160px;
+      margin: 0px;
+      font-size: 25px;
+      padding-top: 67.5px;
+    }
+
+    .coursecontainer:hover p {
+      font-size: 40px;
+      transition: 1s;
+      padding-top: 110px;
+      text-align: center;
+    }
+
+    .coursecontainer:hover img {
+      margin-left: 35%;
+      transition: 1s;
+      height: 100px;
+      width: 100px;
+    }
+
+    .coursecontainer img {
+      float: left;
+      clear: right;
+
+    }
+
+    .coursecontainerlink {
+      color: black;
+    }
+
+    .coursecontainerlink:hover {
+      font-style: italic;
+    }
+
+    /* Style the footer */
+
+    footer {
+      bottom: 80px;
+      background-color: black;
+      padding: 0px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a href="contact.html">Contact us</a>
+    <a href="about.html">About</a>
+    <a href="#">Home</a>
+    <pre style="color: rgb(255,124,0); font-size: 20px;font-style: italic;">       WEB TUTOR</pre>
+  </div>
+
+  <!-- Carousel-->
+  <div class="carousel">
+    <input id="image1" type="radio" name="image-selector" checked="checked" />
+    <label for="image4">View image 4</label>
+    <img src="img2.jpg" width="600px" height="400px"/>
+
+    <input id="image2" type="radio" name="image-selector" />
+    <label for="image1">View image 1</label>
+    <img src="img1.png" width="600px" height="400px"/>
+
+    <input id="image3" type="radio" name="image-selector" />
+    <label for="image2">View image 2</label>
+    <img src="img3.png" width="600px" height="400px"/>
+
+    <input id="image4" type="radio" name="image-selector" />
+    <label for="image3">View image 3</label>
+    <img src="img4.jpg" width="600px" height="400px"/>
+
+    <label for="image4"> image 4</label>
+    <label for="image1"> image 1</label>
+  </div>
+
+  <!-- main content-->
+  <div class="content">
+    <center>
+      <h2>Courses Offered</h2>
+    </center>
+    <!-- main content
+  <center><pre style="font-size: 20px;color: violet">HTML</pre></center>
+
+  <center><pre style="font-size: 20px;color: violet">CSS</pre></center>
+
+  <center><pre style="font-size: 20px;color: violet">JAVASCRIPT</pre></center>
+  <button id="mybtn" class="btn" >Get started</button>
+  <script type="text/javascript">
+    document.getElementById('mybtn').onclick=function(){
+      location.href="project.html";      
+    }
+  </script>
+-->
+    <a href="html_tutorial.pdf" class="coursecontainerlink" target="_blank">
+      <div class="coursecontainer">
+        <img src="html.png" alt="html" height="160px" width="150px">
+        <p>HTML</p>
+      </div>
+    </a>
+    <a href="css_tutorial.pdf" class="coursecontainerlink" target="_blank">
+      <div class="coursecontainer">
+        <img src="css.png" alt="html" height="160px" width="150px">
+        <p>CSS</p>
+      </div>
+    </a>
+    <a href="javascript_tutorial.pdf" class="coursecontainerlink" target="_blank">
+      <div class="coursecontainer">
+        <img src="js.png" alt="html" height="160px" width="150px">
+        <p>JAVASCRIPT</p>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    <a href="www.facebook.com" style="float: left;color: white;text-decoration: none;margin-right: 20px;margin-top: 10px;margin-left: 10px">facebook</a>
+    <a href="www.twitter.com" style="float: left;color: white;text-decoration: none;margin-top: 10px">Twitter</a>
+
+    <p style="float: right;color: white;margin-right:40px; ">
+      Developed by Mohamed Askar and Petchi Muthu Kannan</p>
+  </footer>
+
+</body>
+
+</html>
